@@ -19,20 +19,11 @@ const addToDo = (title, setTitle, description, setDescription, setToDo) => {
     .catch((err) => console.log(err));
 };
 
-const updateToDo = (
-  toDoId,
-  title,
-  description,
-  setDescription,
-  setToDo,
-  setTitle,
-  setIsUpdating
-) => {
+const updateToDo = (toDoId, title, setToDo, setTitle, setIsUpdating) => {
   axios
-    .put(`${baseUrl}/${toDoId}`, { _id: toDoId, title, description })
+    .put(`${baseUrl}/${toDoId}`, { _id: toDoId, title })
     .then((data) => {
       setTitle("");
-      setDescription("");
       setIsUpdating(false);
       getAllToDo(setToDo);
     })

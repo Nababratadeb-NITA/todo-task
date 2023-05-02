@@ -4,7 +4,9 @@
   "description": "none",
   "main": "index.js",
   "scripts": {
-    "test": "start"
+    "test": "start",
+    "start": "node index.js",
+    "build": "echo success"
   },
   "author": "nababrata",
   "license": "ISC",
