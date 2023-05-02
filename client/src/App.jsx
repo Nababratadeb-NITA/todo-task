@@ -19,7 +19,7 @@ const App = () => {
   };
 
   return (
-    <div className="bg-gray-100 h-screen">
+    <div className="bg-gray-100 h-full ">
       <h1 className=" bg-white shadow-lg mb-4 mt-4 flex justify-center items-center font-bold title-lg">
         GET THINGS DONE
       </h1>
@@ -44,14 +44,25 @@ const App = () => {
           onClick={
             isUpdating
               ? () =>
-                  updateToDo(toDoId, title, setToDo, setTitle, setIsUpdating)
+                  updateToDo(
+                    toDoId,
+                    title,
+                    setToDo,
+                    description,
+                    setDescription,
+                    setTitle,
+                    setIsUpdating
+                  )
               : () =>
                   addToDo(title, setTitle, description, setDescription, setToDo)
           }>
           {isUpdating ? "Update" : "Add"}
         </div>
       </div>
-      <div className="mt-8">
+      <div className="mt-8 space-y-4 bg-indigo-200 mx-6 sm:mx-[450px] rounded-md shadow-lg p-8">
+        <h1 className="flex justify-center items-center font-bold text-xl uppercase">
+          My Todos :
+        </h1>
         {toDo.map((item) => (
           <Todo
             key={item._id}
