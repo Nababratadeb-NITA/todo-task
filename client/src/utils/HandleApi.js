@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
 
-const baseUrl = "http://localhost:5000/api/v1/todos";
+const baseUrl = "https://todo-backend-five-xi.vercel.app/api/v1/todos";
 
 const getAllToDo = async (setToDo) => {
   const response = await axios.get(baseUrl);
